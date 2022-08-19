@@ -10,6 +10,14 @@ let proyectosController = {
                 })
             })
     },
+    detail: function(req,res){
+        db.Proyecto.findByPk(req.params.id)
+            .then(function(proyecto){
+                return res.json({
+                    proyecto
+                })
+            })
+    }
 }
 
 module.exports = proyectosController;
